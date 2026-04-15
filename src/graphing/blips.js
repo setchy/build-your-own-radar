@@ -121,7 +121,7 @@ function blipAssistiveText(blip) {
 
   return blip.isGroup()
     ? `\`${blip.ring().name()} ring, group of ${blip.blipText()}`
-    : `${blip.ring().name()} ring, ${blip.name()}, ${blipType} blip.`
+    : `${blip.ring().name()} ring, ${blip.name()}, ${blip.status()}.`
 }
 function addOuterCircle(parentSvg, order, scale = 1) {
   parentSvg
