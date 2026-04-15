@@ -130,7 +130,7 @@ const Radar = function (size, radar) {
 
   function plotRingNames(quadrantGroup, rings, quadrant) {
     rings.forEach(function (ring, i) {
-      const ringNameWithEllipsis = ring.name().length > 6 ? ring.name().slice(0, 6) + '...' : ring.name()
+      const ringNameWithEllipsis = ring.name().length > 7 ? ring.name().slice(0, 7) + '...' : ring.name()
       if (quadrant.order === 'third' || quadrant.order === 'fourth') {
         quadrantGroup
           .append('text')
@@ -761,7 +761,15 @@ const Radar = function (size, radar) {
       }
     })
   }
-
+  function addDisclaimerText(disclaimerParent) {
+    disclaimerParent
+      .append('p')
+      .classed('disclaimer-text', true)
+      .classed('show-disclaimer', true)
+      .html(
+        '<b>Note:</b> The official Thoughtworks Technology Radar has updated the name of the outermost ring from “Hold” to “Caution”. The open-source Build Your Own Radar tool will now reflect this change and use the “Caution” label.',
+      )
+  }
   self.plot = function () {
     var rings, quadrants, alternatives, currentSheet
 
@@ -777,6 +785,7 @@ const Radar = function (size, radar) {
 
     if (featureToggles.UIRefresh2022) {
       renderQuadrantSubnav(radarHeader, quadrants, renderFullRadar)
+      if (featureToggles.normalizeRingNameHoldToCaution) addDisclaimerText(radarHeader)
       renderSearch(radarHeader, quadrants)
       renderAlternativeRadars(radarFooter, alternatives, currentSheet)
       renderQuadrantTables(quadrants, rings)
@@ -788,6 +797,7 @@ const Radar = function (size, radar) {
       })
     } else {
       plotRadarHeader()
+      if (featureToggles.normalizeRingNameHoldToCaution) addDisclaimerText(header)
       plotRadarFooter()
       if (alternatives.length) {
         plotAlternativeRadars(alternatives, currentSheet)
