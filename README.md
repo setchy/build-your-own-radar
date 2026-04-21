@@ -121,11 +121,11 @@ If you do not want to host the JSON file publicly, you can follow [these steps](
 
 ### Deep linking
 
-BYOR supports two ways to deep link
+BYOR supports two ways to deep link:
 
-1 - You can use the optional query string parameter `blipId` to specify the blip to view.
+1. You can use the optional query string parameter `blipId` to specify the blip to view.
 
-2 - You can use the optional query string parameter `quadrant` to specify the quadrant to view. Supported values are: `first`, `second`, `third`, `fourth`.
+2. You can use the optional query string parameter `quadrant` to specify the quadrant to view. Supported values are: `first`, `second`, `third`, `fourth`.
 
 _Note: blip id takes precedence when both are present_
 
