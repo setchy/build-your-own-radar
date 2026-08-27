@@ -116,7 +116,7 @@ const plotRadarGraph = function (title, blips, currentRadarName, alternativeRada
     return allQuadrants
   }, {})
 
-  // Sort blips by quadrant, ring, and name
+  // Sort blips by quadrant, ring order, and name
   blips = sortBlipsAlphabetically(blips)
 
   blips.forEach((blip) => {
@@ -582,7 +582,22 @@ function plotUnauthorizedErrorMessage() {
 }
 
 function sortBlipsAlphabetically(blips) {
-  return _.orderBy(blips, [(blip) => blip.quadrant, (blip) => blip.ring, (blip) => blip.name.toLowerCase()])
+  return _.orderBy(blips, [
+    (blip) => String(blip.quadrant || '').toLowerCase(),
+    (blip) => ringOrderIndex(blip.ring),
+    (blip) => String(blip.name || '').toLowerCase(),
+  ])
+}
+
+function ringOrderIndex(ringName) {
+  const normalizedRingName = featureToggles.normalizeRingNameHoldToCaution
+    ? normalizeRingNameHoldToCaution(ringName)
+    : ringName
+
+  const index = graphConfig.rings.findIndex(
+    (ring) => String(ring).toLowerCase() === String(normalizedRingName || '').toLowerCase(),
+  )
+  return index === -1 ? graphConfig.rings.length : index
 }
 
 module.exports = Factory
