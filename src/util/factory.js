@@ -176,7 +176,7 @@ const CSVDocument = function (url) {
       contentValidator.verifyHeaders()
       var blips = _.map(data, new InputSanitizer().sanitize)
       plotRadarGraph(FileName(url), blips, 'CSV File', [])
-    } catch (exception) {
+    } catch {
       const invalidContentError = new InvalidContentError(ExceptionMessages.INVALID_CSV_CONTENT)
       plotErrorMessage(invalidContentError)
     }
@@ -210,7 +210,7 @@ const JSONFile = function (url) {
       contentValidator.verifyHeaders()
       var blips = _.map(data, new InputSanitizer().sanitize)
       plotRadarGraph(FileName(url), blips, 'JSON File', [])
-    } catch (exception) {
+    } catch {
       const invalidContentError = new InvalidContentError(ExceptionMessages.INVALID_JSON_CONTENT)
       plotErrorMessage(invalidContentError)
     }
