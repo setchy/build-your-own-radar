@@ -3,7 +3,7 @@ const {
   getDocumentOrSheetId,
   getSheetName,
   getBlipIdFromUrl,
-  getQuadrantFromURL,
+  getQuadrantFromUrl,
 } = require('../../src/util/urlUtils')
 const queryParams = require('../../src/util/queryParamProcessor')
 
@@ -96,7 +96,7 @@ describe('Url Utils', () => {
     window.location = Object.create(window)
     window.location.href = 'https://thoughtworks.com/radar?sheet=radar'
     window.location.search = '?'
-    const quadrant = getQuadrantFromURL()
+    const quadrant = getQuadrantFromUrl()
 
     expect(quadrant).toBe('all')
   })
@@ -107,7 +107,7 @@ describe('Url Utils', () => {
     window.location = Object.create(window)
     window.location.href = 'https://thoughtworks.com/radar?sheet=radar'
     window.location.search = '?'
-    const quadrant = getQuadrantFromURL()
+    const quadrant = getQuadrantFromUrl()
 
     expect(quadrant).toBe('first')
   })

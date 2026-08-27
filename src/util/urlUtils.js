@@ -33,7 +33,7 @@ function getBlipIdFromUrl() {
   return isNaN(blipId) ? null : blipId
 }
 
-function getQuadrantFromURL() {
+function getQuadrantFromUrl() {
   const queryParams = QueryParams(window.location.search.substring(1))
   const quadrantQueryString = queryParams.quadrant
 
@@ -45,5 +45,5 @@ module.exports = {
   getDocumentOrSheetId,
   getSheetName,
   getBlipIdFromUrl,
-  getQuadrantFromURL,
+  getQuadrantFromUrl,
 }
