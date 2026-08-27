@@ -24,6 +24,9 @@ const { getGraphSize, graphConfig, isValidConfig } = require('../graphing/config
 const InvalidConfigError = require('../exceptions/invalidConfigError')
 const InvalidContentError = require('../exceptions/invalidContentError')
 const FileNotFoundError = require('../exceptions/fileNotFoundError')
+const config = require('../config')
+const featureToggles = config().featureToggles
+const { normalizeRingNameHoldToCaution } = require('./ringNormalizer')
 
 function validateInputQuadrantOrRingName(allQuadrantsOrRings, quadrantOrRing) {
   const quadrantOrRingNames = Object.keys(allQuadrantsOrRings)
@@ -48,6 +51,7 @@ const plotRadarGraph = function (title, blips, currentRadarName, alternativeRada
   }, {})
 
   blips.forEach((blip) => {
+    blip.ring = featureToggles.normalizeRingNameHoldToCaution ? normalizeRingNameHoldToCaution(blip.ring) : blip.ring
     const currentQuadrant = validateInputQuadrantOrRingName(quadrants, blip.quadrant)
     const ring = validateInputQuadrantOrRingName(ringMap, blip.ring)
     if (currentQuadrant && ring) {

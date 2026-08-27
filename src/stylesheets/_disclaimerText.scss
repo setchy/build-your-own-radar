@@ -1,0 +1,26 @@
+@import 'colors';
+@import 'layout';
+
+p.landing-disclaimer-text {
+  padding-top: 24px;
+  font-weight: normal;
+}
+
+.disclaimer-text {
+  margin: auto;
+  width: 90%;
+  margin-top: 20px;
+
+  @include layout-margin(1, $screen-small);
+  @include layout-margin(1, $screen-medium);
+  @include layout-margin(1, $screen-large);
+  @include layout-margin(1, $screen-xlarge);
+  @include layout-margin(1, $screen-xxlarge);
+  @include layout-margin(1, $screen-xxxlarge);
+}
+
+@if not $normalizeRingNameHoldToCaution {
+  .show-disclaimer {
+    display: none;
+  }
+}

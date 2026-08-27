@@ -22,12 +22,12 @@ You need to make your data public in a form we can digest.
 
 Create a Google Sheet. Give it at least the below column headers, and put in the content that you want:
 
-| name          | ring   | quadrant               | isNew | description                                             |
-| ------------- | ------ | ---------------------- | ----- | ------------------------------------------------------- |
-| Composer      | adopt  | tools                  | TRUE  | Although the idea of dependency management ...          |
-| Canary builds | trial  | techniques             | FALSE | Many projects have external code dependencies ...       |
-| Apache Kylin  | assess | platforms              | TRUE  | Apache Kylin is an open source analytics solution ...   |
-| JSF           | hold   | languages & frameworks | FALSE | We continue to see teams run into trouble using JSF ... |
+| name          | ring    | quadrant               | isNew | description                                             |
+| ------------- | ------- | ---------------------- | ----- | ------------------------------------------------------- |
+| Composer      | adopt   | tools                  | TRUE  | Although the idea of dependency management ...          |
+| Canary builds | trial   | techniques             | FALSE | Many projects have external code dependencies ...       |
+| Apache Kylin  | assess  | platforms              | TRUE  | Apache Kylin is an open source analytics solution ...   |
+| JSF           | Caution | languages & frameworks | FALSE | We continue to see teams run into trouble using JSF ... |
 
 ### Want to show blip movement information?
 
@@ -66,7 +66,7 @@ name,ring,quadrant,isNew,description
 Composer,adopt,tools,TRUE,"Although the idea of dependency management ..."
 Canary builds,trial,techniques,FALSE,"Many projects have external code dependencies ..."
 Apache Kylin,assess,platforms,TRUE,"Apache Kylin is an open source analytics solution ..."
-JSF,hold,languages & frameworks,FALSE,"We continue to see teams run into trouble using JSF ..."
+JSF,Caution,languages & frameworks,FALSE,"We continue to see teams run into trouble using JSF ..."
 ```
 
 If you do not want to host the CSV file publicly, you can follow [these steps](#advanced-option---docker-image-with-a-csvjson-file-from-the-host-machine) to host the file locally on your BYOR docker instance itself.
@@ -107,7 +107,7 @@ An example:
   },
   {
     "name": "JSF",
-    "ring": "hold",
+    "ring": "Caution",
     "quadrant": "languages & frameworks",
     "isNew": "FALSE",
     "description": "We continue to see teams run into trouble using JSF ..."
@@ -129,6 +129,10 @@ That's it!
 For a self hosted BYOR app, there is no such condition on the names. Instructions to specify custom names are in the [next section](#more-complex-usage).
 
 Check [this page](https://www.thoughtworks.com/radar/byor) for step by step guidance.
+
+## Disclaimer
+
+The fourth ring name has been changed from **Hold** to **Caution** in the recent release. Data using the ring value "Hold" (any case) in your sheet, CSV, or JSON is still accepted and displayed as **Caution**.
 
 ### More complex usage
 
@@ -167,9 +171,13 @@ export ADOBE_LAUNCH_SCRIPT_URL=[Adobe Launch URL]
 To specify custom ring and/or quadrant names, add the following environment variables with the desired values.
 
 ```
-export RINGS='["Adopt", "Trial", "Assess", "Hold"]'
+export RINGS='["Adopt", "Trial", "Assess", "Caution"]'
 export QUADRANTS='["Techniques", "Platforms", "Tools", "Languages & Frameworks"]'
 ```
+
+### Hold to Caution ring normalization (feature toggle)
+
+If you host Build Your Own Radar and use Thoughtworks-defined ring names (Adopt, Trial, Assess, Caution), you can still allow your website users to upload sheets, CSV, or JSON where the ring value is **hold** (any case). The app will normalize **hold** to **Caution** when the feature toggle **normalizeRingNameHoldToCaution** is enabled (it is enabled by default). To disable this behavior so that only the exact ring name "Caution" is accepted, set the toggle to `false` in your [config](src/config.js).
 
 ## Docker Image
 
@@ -247,6 +255,6 @@ To run End to End tests, start the dev server and follow the required steps belo
 
 ### Don't want to install node? Run with one line docker
 
-     $ docker run -p 8080:8080 -v $PWD:/app -w /app -it node:18 /bin/sh -c 'npm install && npm run dev'
+     $ docker run -p 8080:8080 -v $PWD:/app -w /app -it node:24 /bin/sh -c 'npm install && npm run dev'
 
 After building it will start on `localhost:8080`.

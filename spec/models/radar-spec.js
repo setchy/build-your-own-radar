@@ -1,3 +1,5 @@
+jest.mock('../../src/config', () => jest.fn(() => ({ featureToggles: { normalizeRingNameHoldToCaution: true } })))
+
 const Radar = require('../../src/models/radar')
 const Quadrant = require('../../src/models/quadrant')
 const Ring = require('../../src/models/ring')
@@ -155,8 +157,8 @@ describe('Radar', function () {
       rings = []
 
     beforeEach(function () {
-      process.env.ENVIRONMENT = 'development'
-      firstRing = new Ring('hold', 0)
+      process.env.ENVIRONMENT = 'production'
+      firstRing = new Ring('Caution', 0)
       secondRing = new Ring('ADOPT', 1)
       thirdRing = new Ring('TRiAl', 2)
       fourthRing = new Ring('assess', 3)
@@ -164,6 +166,7 @@ describe('Radar', function () {
       quadrant = new Quadrant('Fourth')
       otherQuadrant = new Quadrant('Other')
       radar = new Radar()
+      rings = []
       graphConfig.rings.forEach((ring, index) => rings.push(new Ring(ring, index)))
       radar.addRings(rings)
     })
