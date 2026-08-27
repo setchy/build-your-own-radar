@@ -3,7 +3,7 @@ const {
   getDocumentOrSheetId,
   getSheetName,
   getBlipIdFromUrl,
-  getQuadrantFromURL,
+  getQuadrantFromUrl,
 } = require('../../src/util/urlUtils')
 const queryParams = require('../../src/util/queryParamProcessor')
 
@@ -68,46 +68,34 @@ describe('Url Utils', () => {
     expect(sheetName).toEqual('sheetName')
   })
 
-  it('should return all if no blip id found in url', () => {
+  it('should return null if no blip id found in url', () => {
     queryParams.mockReturnValue({ some: 'param' })
-    delete window.location
-    window.location = Object.create(window)
-    window.location.href = 'https://thoughtworks.com/radar?sheet=radar'
-    window.location.search = '?'
-    const quadrant = getBlipIdFromUrl()
+    setWindowLocation('https://thoughtworks.com/radar?sheet=radar')
+    const blipId = getBlipIdFromUrl()
 
-    expect(quadrant).toBeNull()
+    expect(blipId).toBeNull()
   })
 
   it('should return blip id if found in url', () => {
     queryParams.mockReturnValue({ blipId: '50' })
-    delete window.location
-    window.location = Object.create(window)
-    window.location.href = 'https://thoughtworks.com/radar?sheet=radar'
-    window.location.search = '?'
-    const quadrant = getBlipIdFromUrl()
+    setWindowLocation('https://thoughtworks.com/radar?sheet=radar')
+    const blipId = getBlipIdFromUrl()
 
-    expect(quadrant).toBe(50)
+    expect(blipId).toBe(50)
   })
 
   it('should return all if no quadrant found in url', () => {
     queryParams.mockReturnValue({ some: 'param' })
-    delete window.location
-    window.location = Object.create(window)
-    window.location.href = 'https://thoughtworks.com/radar?sheet=radar'
-    window.location.search = '?'
-    const quadrant = getQuadrantFromURL()
+    setWindowLocation('https://thoughtworks.com/radar?sheet=radar')
+    const quadrant = getQuadrantFromUrl()
 
     expect(quadrant).toBe('all')
   })
 
   it('should return quadrant if found in url', () => {
     queryParams.mockReturnValue({ quadrant: 'FIRST' })
-    delete window.location
-    window.location = Object.create(window)
-    window.location.href = 'https://thoughtworks.com/radar?sheet=radar'
-    window.location.search = '?'
-    const quadrant = getQuadrantFromURL()
+    setWindowLocation('https://thoughtworks.com/radar?sheet=radar')
+    const quadrant = getQuadrantFromUrl()
 
     expect(quadrant).toBe('first')
   })

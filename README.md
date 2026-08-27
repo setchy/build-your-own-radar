@@ -1,45 +1,3 @@
-# Setchy's Build Your Own Technology Radar
-
-> [!NOTE]
-> This enhanced version is hosted at https://radar.setchy.io for anyone to use
-
-## Overview
-
-An enhanced version of Thoughtworks [BYOR][byor], which incorporates a number of usability and functionality improvements by @setchy.
-
-These enhancements are mostly back-ported features that exists in the [official thoughtworks radar](tw-radar), but currently are not available within the [byor version](tw-byor)
-
-## Enhancements
-
-These enhancements including:
-
-- [deep linking to quadrants][pr-linking]
-- [deep linking to blips][pr-linking]
-- [alphabetic ordering of blips][pr-alpha-order]
-- [consistent draw order of blips based on blip number][pr-draw-ascending]
-- [blip movement detail (moved in, moved out, unchanged)][pr-movement]
-- [fix for google tag manager analytics plugin][pr-gtm]
-
-Each of these have a [corresponding PR open][prs] for contribution to the upstream project
-
-## Deployment
-
-This branch is deployed via GitHub Pages
-
-[byor]: https://github.com/thoughtworks/build-your-own-radar
-[prs]: https://github.com/thoughtworks/build-your-own-radar/pulls/setchy
-[tw-byor]: https://radar.thoughtworks.com
-[tw-radar]: https://thoughtworks.com/radar
-[pr-gtm]: https://github.com/thoughtworks/build-your-own-radar/pull/368
-[pr-linking]: https://github.com/thoughtworks/build-your-own-radar/pull/337
-[pr-alpha-order]: https://github.com/thoughtworks/build-your-own-radar/pull/330
-[pr-draw-ascending]: https://github.com/thoughtworks/build-your-own-radar/pull/322
-[pr-movement]: https://github.com/thoughtworks/build-your-own-radar/pull/310
-
----
-
-# Build Your Own Technology RAdar
-
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/thoughtworks/build-your-own-radar?sort=semver)](https://github.com/thoughtworks/build-your-own-radar/releases/latest)
 [![Thoughtworks](https://circleci.com/gh/thoughtworks/build-your-own-radar.svg?style=shield)](https://circleci.com/gh/thoughtworks/build-your-own-radar)
 [![Stars](https://badgen.net/github/stars/thoughtworks/build-your-own-radar)](https://github.com/thoughtworks/build-your-own-radar)
@@ -70,17 +28,6 @@ Create a Google Sheet. Give it at least the below column headers, and put in the
 | Canary builds | trial   | techniques             | FALSE | Many projects have external code dependencies ...       |
 | Apache Kylin  | assess  | platforms              | TRUE  | Apache Kylin is an open source analytics solution ...   |
 | JSF           | Caution | languages & frameworks | FALSE | We continue to see teams run into trouble using JSF ... |
-
-### Want to show blip movement information?
-
-If you want to show movement of blips, add the optional column `status` to your dataset.
-
-This column accepts the following case-insensitive values :
-
-- `New` - appearing on the radar for the first time
-- `Moved In` - moving towards the center of the radar
-- `Moved Out` - moving towards the edge of the radar
-- `No Change` - no change in position
 
 ### Want to show blip movement information?
 
@@ -174,11 +121,11 @@ If you do not want to host the JSON file publicly, you can follow [these steps](
 
 ### Deep linking
 
-BYOR supports two ways to deep link
+BYOR supports two ways to deep link:
 
-1 - You can use the optional query string parameter `blipId` to specify the blip to view.
+1. You can use the optional query string parameter `blipId` to specify the blip to view.
 
-2 - You can use the optional query string parameter `quadrant` to specify the quadrant to view. Supported values are: `first`, `second`, `third`, `fourth`.
+2. You can use the optional query string parameter `quadrant` to specify the quadrant to view. Supported values are: `first`, `second`, `third`, `fourth`.
 
 _Note: blip id takes precedence when both are present_
 

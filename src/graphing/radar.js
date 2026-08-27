@@ -21,7 +21,7 @@ const {
 const { renderQuadrantTables, performBlipClick } = require('./components/quadrantTables')
 const { addQuadrantNameInPdfView, addRadarLinkInPdfView } = require('./pdfPage')
 
-const { getBlipIdFromUrl, getQuadrantFromURL } = require('../util/urlUtils')
+const { getBlipIdFromUrl, getQuadrantFromUrl } = require('../util/urlUtils')
 const { toRadian } = require('../util/mathUtils')
 const featureToggles = require('../config')().featureToggles
 
@@ -256,7 +256,7 @@ function renderDeepLinkViewIfPresent(quadrants) {
 
   // Deep link by blip id
   const blipIdToShow = getBlipIdFromUrl()
-  if (blipIdToShow) {
+  if (blipIdToShow != null) {
     for (const q of quadrants) {
       for (const b of q.quadrant.blips()) {
         if (b.id() === blipIdToShow) {
@@ -267,8 +267,8 @@ function renderDeepLinkViewIfPresent(quadrants) {
   }
 
   // Deep link by quadrant order
-  const quadrantToShow = getQuadrantFromURL()
-  if (quadrantToShow && !blipIdToShow) {
+  const quadrantToShow = getQuadrantFromUrl()
+  if (quadrantToShow !== 'all' && blipIdToShow == null) {
     for (const q of quadrants) {
       if (q.order === quadrantToShow) {
         quadrant = q
@@ -279,9 +279,13 @@ function renderDeepLinkViewIfPresent(quadrants) {
   if (quadrant) {
     selectRadarQuadrant(quadrant.order, quadrant.startAngle, quadrant.quadrant.name())
 
-    if (blipIdToShow) {
+    if (blipIdToShow != null) {
       const blipLink = document.getElementById(`blip-link-${blipIdToShow}`)
-      performBlipClick(blipLink)
+      if (blipLink) {
+        performBlipClick(blipLink)
+      } else {
+        console.warn(`Unable to find blip link element for deep-linked blip id: ${blipIdToShow}`)
+      }
     }
   }
 }
