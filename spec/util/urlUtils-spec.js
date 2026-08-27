@@ -68,15 +68,15 @@ describe('Url Utils', () => {
     expect(sheetName).toEqual('sheetName')
   })
 
-  it('should return all if no blip id found in url', () => {
+  it('should return null if no blip id found in url', () => {
     queryParams.mockReturnValue({ some: 'param' })
     delete window.location
     window.location = Object.create(window)
     window.location.href = 'https://thoughtworks.com/radar?sheet=radar'
     window.location.search = '?'
-    const quadrant = getBlipIdFromUrl()
+    const blipId = getBlipIdFromUrl()
 
-    expect(quadrant).toBeNull()
+    expect(blipId).toBeNull()
   })
 
   it('should return blip id if found in url', () => {
@@ -85,9 +85,9 @@ describe('Url Utils', () => {
     window.location = Object.create(window)
     window.location.href = 'https://thoughtworks.com/radar?sheet=radar'
     window.location.search = '?'
-    const quadrant = getBlipIdFromUrl()
+    const blipId = getBlipIdFromUrl()
 
-    expect(quadrant).toBe(50)
+    expect(blipId).toBe(50)
   })
 
   it('should return all if no quadrant found in url', () => {

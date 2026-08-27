@@ -188,7 +188,7 @@ function performBlipClick(targetElement) {
 
   d3.selectAll('.blip-list__item-container.expand').classed('expand', false)
 
-  let selectedBlipContainer = d3.select(`.blip-list__item-container[data-blip-id="${blipId}"`)
+  let selectedBlipContainer = d3.select(`.blip-list__item-container[data-blip-id="${blipId}"]`)
   selectedBlipContainer.classed('expand', true)
 
   setTimeout(
@@ -199,7 +199,7 @@ function performBlipClick(targetElement) {
 
       const isGroupBlip = isNaN(parseInt(blipId))
       if (isGroupBlip) {
-        selectedBlipContainer = d3.select(`.blip-list__item-container[data-group-id="${blipId}"`)
+        selectedBlipContainer = d3.select(`.blip-list__item-container[data-group-id="${blipId}"]`)
       }
       const elementToFocus = selectedBlipContainer.select('button.blip-list__item-container__name')
       elementToFocus.node()?.scrollIntoView({
