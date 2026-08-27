@@ -534,6 +534,14 @@ function stickQuadrantOnScroll() {
     const selectedQuadrantTable = d3.select('.quadrant-table.selected')
     const radarLegendsContainer = d3.select('.radar-legends')
 
+    // A blip click schedules stickQuadrantOnScroll() 1.5s later; by then the
+    // user may have navigated back to the all-quadrants view and there is no
+    // selected quadrant table. Bail out instead of crashing on null DOM nodes.
+    if (!selectedQuadrantTable.node() || !radarContainer.node() || !radarElement.node()) {
+      removeScrollListener()
+      return
+    }
+
     const radarHeight = quadrantHeight * scale + quadrantsGap * scale
     const offset = radarContainer.node().offsetTop - uiConfig.subnavHeight
     const radarWidth = radarContainer.node().getBoundingClientRect().width

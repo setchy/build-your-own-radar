@@ -1,5 +1,7 @@
 function getElementWidth(element) {
-  return element.node().getBoundingClientRect().width
+  const node = element && element.node && element.node()
+  if (!node) return 0
+  return node.getBoundingClientRect().width
 }
 
 function decodeHTML(encodedText) {
@@ -8,7 +10,9 @@ function decodeHTML(encodedText) {
 }
 
 function getElementHeight(element) {
-  return element.node().getBoundingClientRect().height
+  const node = element && element.node && element.node()
+  if (!node) return 0
+  return node.getBoundingClientRect().height
 }
 
 module.exports = {
