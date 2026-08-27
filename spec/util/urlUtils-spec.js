@@ -70,10 +70,7 @@ describe('Url Utils', () => {
 
   it('should return null if no blip id found in url', () => {
     queryParams.mockReturnValue({ some: 'param' })
-    delete window.location
-    window.location = Object.create(window)
-    window.location.href = 'https://thoughtworks.com/radar?sheet=radar'
-    window.location.search = '?'
+    setWindowLocation('https://thoughtworks.com/radar?sheet=radar')
     const blipId = getBlipIdFromUrl()
 
     expect(blipId).toBeNull()
@@ -81,10 +78,7 @@ describe('Url Utils', () => {
 
   it('should return blip id if found in url', () => {
     queryParams.mockReturnValue({ blipId: '50' })
-    delete window.location
-    window.location = Object.create(window)
-    window.location.href = 'https://thoughtworks.com/radar?sheet=radar'
-    window.location.search = '?'
+    setWindowLocation('https://thoughtworks.com/radar?sheet=radar')
     const blipId = getBlipIdFromUrl()
 
     expect(blipId).toBe(50)
@@ -92,10 +86,7 @@ describe('Url Utils', () => {
 
   it('should return all if no quadrant found in url', () => {
     queryParams.mockReturnValue({ some: 'param' })
-    delete window.location
-    window.location = Object.create(window)
-    window.location.href = 'https://thoughtworks.com/radar?sheet=radar'
-    window.location.search = '?'
+    setWindowLocation('https://thoughtworks.com/radar?sheet=radar')
     const quadrant = getQuadrantFromUrl()
 
     expect(quadrant).toBe('all')
@@ -103,10 +94,7 @@ describe('Url Utils', () => {
 
   it('should return quadrant if found in url', () => {
     queryParams.mockReturnValue({ quadrant: 'FIRST' })
-    delete window.location
-    window.location = Object.create(window)
-    window.location.href = 'https://thoughtworks.com/radar?sheet=radar'
-    window.location.search = '?'
+    setWindowLocation('https://thoughtworks.com/radar?sheet=radar')
     const quadrant = getQuadrantFromUrl()
 
     expect(quadrant).toBe('first')
