@@ -28,7 +28,7 @@ function getBlipIdFromUrl() {
   const queryParams = QueryParams(window.location.search.substring(1))
   const blipQueryString = queryParams.blipId
 
-  const blipId = parseInt(blipQueryString)
+  const blipId = parseInt(blipQueryString, 10)
 
   return isNaN(blipId) ? null : blipId
 }
