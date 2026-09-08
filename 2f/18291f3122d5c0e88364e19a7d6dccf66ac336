@@ -1,0 +1,19 @@
+sync_combined_enhancements.sh
+  s_824571d4fab00e::t_b2323ef6f638db 1-97
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "2f18291f3122d5c0e88364e19a7d6dccf66ac336",
+  "prompts": {},
+  "sessions": {
+    "s_824571d4fab00e": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "88d08bbb-a4e9-4ec0-a049-159e5ec318c2",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
