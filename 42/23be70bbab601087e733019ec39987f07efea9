@@ -1,0 +1,35 @@
+src/util/htmlUtil.js
+  s_824571d4fab00e::t_a2734abece3fbe 2-4,13-15
+.circleci/deployment-workflow.yml
+  s_824571d4fab00e::t_a2734abece3fbe 10,35
+.circleci/config.yml
+  s_824571d4fab00e::t_a2734abece3fbe 11,52
+src/graphing/components/quadrants.js
+  s_824571d4fab00e::t_a2734abece3fbe 537-544
+package.json
+  s_824571d4fab00e::t_a2734abece3fbe 3
+spec/util/urlUtils-spec.js
+  s_824571d4fab00e::t_a2734abece3fbe 5-9,13,22,31,40,49,58
+README.md
+  s_824571d4fab00e::t_a2734abece3fbe 258
+jest.config.js
+  s_824571d4fab00e::t_a2734abece3fbe 5-8
+package-lock.json
+  s_824571d4fab00e::t_52a96a7ea6ef26 3,9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "4223be70bbab601087e733019ec39987f07efea9",
+  "prompts": {},
+  "sessions": {
+    "s_824571d4fab00e": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "88d08bbb-a4e9-4ec0-a049-159e5ec318c2",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
