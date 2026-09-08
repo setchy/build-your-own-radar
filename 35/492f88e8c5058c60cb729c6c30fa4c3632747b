@@ -1,0 +1,20 @@
+src/analytics.js
+  s_824571d4fab00e::t_57137445c71bdb 2-4
+  s_824571d4fab00e::t_052147782f14e2 7,9,11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "35492f88e8c5058c60cb729c6c30fa4c3632747b",
+  "prompts": {},
+  "sessions": {
+    "s_824571d4fab00e": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "88d08bbb-a4e9-4ec0-a049-159e5ec318c2",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
