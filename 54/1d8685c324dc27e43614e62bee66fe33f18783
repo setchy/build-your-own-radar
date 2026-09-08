@@ -1,0 +1,19 @@
+spec/util/urlUtils-spec.js
+  s_824571d4fab00e::t_7f9cb484002bf4 73,81,89,97
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "541d8685c324dc27e43614e62bee66fe33f18783",
+  "prompts": {},
+  "sessions": {
+    "s_824571d4fab00e": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "88d08bbb-a4e9-4ec0-a049-159e5ec318c2",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
