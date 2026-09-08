@@ -1,0 +1,32 @@
+src/util/urlUtils.js
+  s_824571d4fab00e::t_9126519f772d54 48
+  s_824571d4fab00e::t_516e03c68e8a69 31
+  h_ac004aadb63da9 36
+spec/util/urlUtils-spec.js
+  s_824571d4fab00e::t_9126519f772d54 6
+  s_824571d4fab00e::t_516e03c68e8a69 99,110
+src/graphing/radar.js
+  s_824571d4fab00e::t_9126519f772d54 28
+  s_824571d4fab00e::t_4b9f2376d9e71d 872,883-884,895,897-901
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "4f10de238be7dfdf56cf2946492bcaaf04210623",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  },
+  "sessions": {
+    "s_824571d4fab00e": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "88d08bbb-a4e9-4ec0-a049-159e5ec318c2",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
