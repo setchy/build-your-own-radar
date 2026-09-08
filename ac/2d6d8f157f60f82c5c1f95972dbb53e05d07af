@@ -1,0 +1,56 @@
+src/stylesheets/_footer.scss
+  s_824571d4fab00e::t_e78fa510ffc590 21-22,24-29,31-33
+src/graphing/components/banner.js
+  s_824571d4fab00e::t_e78fa510ffc590 6,8-10,12
+src/stylesheets/_quadrantsubnav.scss
+  s_824571d4fab00e::t_e78fa510ffc590 4-22,24-27,30-56,59,61-65,67-69,71-73,76-77,81,83-86,89-99,101-103,105-107,109-111,113-114,117,119-131,134,136-145,147,149-152,154-157,159
+src/graphing/blips.js
+  s_824571d4fab00e::t_e78fa510ffc590 92,97-98
+src/stylesheets/_search.scss
+  s_824571d4fab00e::t_e78fa510ffc590 4-7,9-10,12,14-19,21-23,25-29,31-33,35-36,38,40-41,43-44,46,48-49,51-52,54,56-57,59-60,62,64-75,78,80-99
+src/util/sheet.js
+  s_824571d4fab00e::t_e78fa510ffc590 36
+src/stylesheets/_header.scss
+  s_824571d4fab00e::t_e78fa510ffc590 187-191,193,195-211,213-215,217-220
+src/stylesheets/_buttons.scss
+  s_824571d4fab00e::t_e78fa510ffc590 4-20,22-29,32,35,39,43,45-47,49-51,53-55,57-58,60-61,63-64
+src/models/radar.js
+  s_824571d4fab00e::t_e78fa510ffc590 9-14,58
+src/stylesheets/_alternativeradars.scss
+  s_824571d4fab00e::t_e78fa510ffc590 4-7,9-10,12-19,21-29,32-40,42-49,51,53,55,57-62,64-69,73-77,79-86,88-90,92-96,99-100
+src/util/exceptionMessages.js
+  s_824571d4fab00e::t_e78fa510ffc590 10
+src/stylesheets/_error.scss
+  s_824571d4fab00e::t_e78fa510ffc590 9-10,12-13
+src/util/autoComplete.js
+  s_824571d4fab00e::t_e78fa510ffc590 31-41
+src/stylesheets/base.scss
+  s_824571d4fab00e::t_e78fa510ffc590 37-38,40-44,46-48,50-52,54-56,58-59,61-68,70,74-76,78-79,82-84,86-87,91-93,95-96,100-102,104-107,110-129,132-152
+src/graphing/radar.js
+  s_824571d4fab00e::t_e78fa510ffc590 31,59,191-200,204-206,210-216,219-221
+  s_824571d4fab00e::t_9a925552853049 24
+src/stylesheets/_quadrantTables.scss
+  s_824571d4fab00e::t_e78fa510ffc590 4-17,19-22,24-26,28-30,33-37,39,42-45,47-48,52-55,57,59-61,63-77,80-83,90,92-119
+src/stylesheets/_herobanner.scss
+  s_824571d4fab00e::t_e78fa510ffc590 4-14,16-18,20-24,26-28,30-36,38-44,46-57,59-62,64-66,68-69
+src/stylesheets/_quadrants.scss
+  s_824571d4fab00e::t_e78fa510ffc590 6,8-11,13-22,24-25,27,30-33,35,37-39,41-43,45-47,57-58,60,62-64,66-67,88-89,119-126,128,130-132,189-196,198-201,203-205,208-210,212,214-216,218-229,252-255,257-259,261-263,265-266,274-276,278-280,282-283,335-336,338-342,345-346,348-355,358-361,363-383,385,387-406,408,410-413,416-423,426-427,430,432-442
+src/util/factory.js
+  s_824571d4fab00e::t_e78fa510ffc590 79,90,111-113,130,132,156,158,170,173,191,193,204,207,245,284-287,290-291,294,297-304,319,321,327-330,343,356,359
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "ac2d6d8f157f60f82c5c1f95972dbb53e05d07af",
+  "prompts": {},
+  "sessions": {
+    "s_824571d4fab00e": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "88d08bbb-a4e9-4ec0-a049-159e5ec318c2",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
