@@ -1,0 +1,32 @@
+.circleci/deployment-workflow.yml
+  s_824571d4fab00e::t_d58b96af36fea3 10
+package.json
+  s_824571d4fab00e::t_ee669ad69f1d1c 30,41
+babel.config.js
+  s_824571d4fab00e::t_65178984552c4f 1-3
+jest.config.js
+  s_824571d4fab00e::t_1572ce316b4aae 14-16
+  s_824571d4fab00e::t_f882cfbe728abb 13
+.circleci/config.yml
+  s_824571d4fab00e::t_d58b96af36fea3 11
+eslint.config.js
+  s_824571d4fab00e::t_fe84d6f3542610 1-43
+package-lock.json
+  s_824571d4fab00e::t_829929a9476036 23,34,3918-3938
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "c122903b3caa3353021e7604078b2b750414daf0",
+  "prompts": {},
+  "sessions": {
+    "s_824571d4fab00e": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "88d08bbb-a4e9-4ec0-a049-159e5ec318c2",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
